@@ -10,21 +10,21 @@ key_jump = keyboard_check_pressed(vk_space);
 // movement + gravity
 var move = key_right - key_left;
 var prev_hsp = hsp;
+var prev_vsp = vsp;
 hsp = move * walksp;
 vsp = vsp + grv;
-
-// update animation if movement speed changes frame to frame
-if (prev_hsp != hsp){
-	update_animation = 1;
-    if (hsp > 0) { facing = 1; }
-	if (hsp < 0) { facing = -1; }
-}
 
 // Jump
 if(place_meeting(x, y+1, obj_wall) && key_jump){
 		vsp = jump_height * -1;
-		update_animation = 1;
 		audio_play_sound(effect_jump, 10, false);
+}
+
+// update animation if movement speed changes frame to frame
+if (prev_hsp != hsp || prev_vsp != vsp){
+	update_animation = 1;
+    if (hsp > 0) { facing = 1; }
+	if (hsp < 0) { facing = -1; }
 }
 
 // Horizontal Collision
@@ -50,7 +50,7 @@ y = y + vsp;
 
 
 // Animation
-if (hsp == 0 && update_animation == 1){
+if (hsp == 0 && vsp == 0 && update_animation == 1){
 	if (facing == 1){
 		sprite_index = spr_player_stand_right;
 		update_animation = 0;

@@ -5,6 +5,7 @@
 key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));;
 key_jump = keyboard_check_pressed(vk_space);
+key_quit = keyboard_check_pressed(vk_escape);
 
 
 // movement + gravity
@@ -81,5 +82,8 @@ if (!place_meeting(x, y+1, obj_wall) && update_animation == 1) {
 	
 }
 
+if (key_quit) {
+	game_end();
+}	
 
 

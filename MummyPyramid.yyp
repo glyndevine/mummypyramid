@@ -130,7 +130,7 @@
             "Key": "462ac703-002a-49ba-acc4-5c1e4021ace7",
             "Value": {
                 "id": "1fffa055-5920-4292-a268-80e0a994c851",
-                "resourcePath": "objects\\object4\\object4.yy",
+                "resourcePath": "objects\\obj_ceiling\\obj_ceiling.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -252,6 +252,14 @@
                 "id": "fd2cd31a-36fb-48f7-8d59-bad74dcd19be",
                 "resourcePath": "objects\\obj_bullet\\obj_bullet.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "b304177d-c788-4166-b2c0-2264b9bf53ae",
+            "Value": {
+                "id": "194ea9ce-1c83-4a31-b5db-151c97ecd0e6",
+                "resourcePath": "sprites\\sprite9\\sprite9.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

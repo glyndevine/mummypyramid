@@ -2,7 +2,7 @@
     "id": "462ac703-002a-49ba-acc4-5c1e4021ace7",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "object4",
+    "name": "obj_ceiling",
     "eventList": [
         
     ],
@@ -24,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "1d506555-783f-4abe-9948-4e5a8434286f",
+    "spriteId": "b304177d-c788-4166-b2c0-2264b9bf53ae",
     "visible": true
 }

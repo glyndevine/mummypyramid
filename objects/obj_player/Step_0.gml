@@ -7,12 +7,16 @@ key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));;
 key_jump = keyboard_check_pressed(vk_space);
 key_quit = keyboard_check_pressed(vk_escape);
 key_restart = keyboard_check_pressed(vk_f12);
+mouse_left = mouse_check_button(mb_left);
 
 
 // movement + gravity
 var move = key_right - key_left;
 var prev_hsp = hsp;
 var prev_vsp = vsp;
+
+if (mouse_left) { move = 0; } // freeze in place while firing, hacky crap
+
 hsp = move * walksp;
 vsp = vsp + grv;
 
@@ -88,9 +92,12 @@ if (!place_meeting(x, y+1, obj_wall) && update_animation == 1) {
 	if (facing == -1 && update_animation == 1){
 		sprite_index = spr_player_walk_left;
 		update_animation = 0;
-	}
-	
+	}	
 }
+if(mouse_left) {
+	sprite_index = spr_player_fire_right; // firing animation frame
+}
+
 
 
 // Quit game

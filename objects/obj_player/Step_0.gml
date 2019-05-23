@@ -15,7 +15,7 @@ var move = key_right - key_left;
 var prev_hsp = hsp;
 var prev_vsp = vsp;
 
-if (mouse_left) { move = 0; } // freeze in place while firing, hacky crap
+if (mouse_left) { move = 0; update_animation = 1; } // freeze in place while firing, hacky crap
 
 hsp = move * walksp;
 vsp = vsp + grv;
@@ -65,6 +65,17 @@ if (step_trigger == 1){
 
 
 // Animation
+if(mouse_left) {
+	if (facing == 1 && update_animation == 1){
+		sprite_index = spr_player_fire_right;
+		update_animation = 0;
+	}
+	if (facing == -1 && update_animation == 1){
+		sprite_index = spr_player_fire_left;
+		update_animation = 0;
+	}
+}
+
 if (hsp == 0 && vsp == 0 && update_animation == 1){
 	if (facing == 1){
 		sprite_index = spr_player_stand_right;
@@ -93,9 +104,6 @@ if (!place_meeting(x, y+1, obj_wall) && update_animation == 1) {
 		sprite_index = spr_player_walk_left;
 		update_animation = 0;
 	}	
-}
-if(mouse_left) {
-	sprite_index = spr_player_fire_right; // firing animation frame
 }
 
 

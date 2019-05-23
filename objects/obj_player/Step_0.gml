@@ -93,12 +93,12 @@ if (!place_meeting(x, y+1, obj_wall) && update_animation == 1) {
 }
 
 
-
+// Quit game
 if (key_quit) {
 	game_end();
 }	
 
-
+// Restart game
 if (key_restart) {
 	game_restart();
 }

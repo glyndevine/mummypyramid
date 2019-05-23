@@ -6,6 +6,7 @@ key_left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));;
 key_jump = keyboard_check_pressed(vk_space);
 key_quit = keyboard_check_pressed(vk_escape);
+key_restart = keyboard_check_pressed(vk_f12);
 
 
 // movement + gravity
@@ -98,3 +99,6 @@ if (key_quit) {
 }	
 
 
+if (key_restart) {
+	game_restart();
+}

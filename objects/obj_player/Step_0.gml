@@ -20,6 +20,12 @@ if (mouse_left) { move = 0; update_animation = 1; } // freeze in place while fir
 hsp = move * walksp;
 vsp = vsp + grv;
 
+// Hook Movement
+if (hooking == true && hookflying == false) {
+    move_towards_point(obj_hookshot.x, obj_hookshot.y, 6);
+}
+
+
 // Jump
 if(place_meeting(x, y+1, obj_wall) && key_jump){
 		vsp = jump_height * -1;
@@ -105,7 +111,6 @@ if (!place_meeting(x, y+1, obj_wall) && update_animation == 1) {
 		update_animation = 0;
 	}	
 }
-
 
 
 // Quit game

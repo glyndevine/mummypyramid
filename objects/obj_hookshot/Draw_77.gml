@@ -1,0 +1,4 @@
+if (place_meeting(x,y,obj_wall) || place_meeting(x,y,obj_ceiling)) { 
+		if (obj_player.hookflying == true) { speed = 0; obj_player.hookflying = false; obj_player.grv = 0; }
+		if (obj_player.hooking == false){ obj_player.grv = 1; obj_player.speed = 0; instance_destroy(); }
+}

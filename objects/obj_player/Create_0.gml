@@ -12,3 +12,5 @@ foot_origin_offset_y = -24
 
 facing = 1; // 1 - right, -1 - left
 update_animation = 0; // flag for animation updates
+hooking = false; // bool is using grappling hook
+hookflying = false; // bool is a hook on its way to destination

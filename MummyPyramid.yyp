@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "ba2f7fcc-3ac3-4d43-94ab-4bb36998976e",
+            "Value": {
+                "id": "dbb1b189-3341-4d0d-b24c-ff81a8030725",
+                "resourcePath": "objects\\obj_hookshot\\obj_hookshot.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "bbe687c3-e4aa-4a1a-be87-4e8b246755d2",
             "Value": {
                 "id": "6d6373de-7154-42c4-9eb1-103114b533d8",

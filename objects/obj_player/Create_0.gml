@@ -3,7 +3,9 @@
 hsp = 0;
 vsp = 0;
 grv = 1;
+move = 0; // -1 - left 1 - right - 0 - stop
 walksp = 4;
+firing = false; // presently firing
 jump_height = 14;
 step_height = 10;
 step_trigger = 0;

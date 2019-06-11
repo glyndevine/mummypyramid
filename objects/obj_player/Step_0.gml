@@ -8,14 +8,15 @@ key_jump = keyboard_check_pressed(vk_space);
 key_quit = keyboard_check_pressed(vk_escape);
 key_restart = keyboard_check_pressed(vk_f12);
 mouse_left = mouse_check_button(mb_left);
-
+onground = place_meeting(x, y+1, obj_wall);
 
 // movement + gravity
-var move = key_right - key_left;
+
+if (onground && firing) { move = 0; } else { move = key_right - key_left; }
+
 var prev_hsp = hsp;
 var prev_vsp = vsp;
 
-if (mouse_left) { move = 0; update_animation = 1; } // freeze in place while firing, hacky crap
 
 hsp = move * walksp;
 vsp = vsp + grv;
@@ -27,7 +28,7 @@ if (hooking == true && hookflying == false) {
 
 
 // Jump
-if(place_meeting(x, y+1, obj_wall) && key_jump){
+if(onground && key_jump){
 		vsp = jump_height * -1;
 		audio_play_sound(effect_jump, 10, false);
 }

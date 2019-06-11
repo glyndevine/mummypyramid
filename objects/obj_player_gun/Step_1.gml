@@ -14,14 +14,16 @@ recoil = max(0, recoil - 1);
 if(mouse_check_button(mb_left)) && (firingdelay < 0) {
 	recoil = 4;
 	firingdelay = 5;
+	if (!obj_player.firing) { obj_player.firing = true; };
 	with(instance_create_layer(x,y,"Bullets",obj_bullet)){
 		speed = 25;
 		direction = other.image_angle;
 		image_angle = direction;
 	}
 }
-
-// hook cooldown
+if (!mouse_check_button(mb_left) && obj_player.firing == true){
+	obj_player.firing = false;
+}
 
 
 //Hookshot

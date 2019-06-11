@@ -6,9 +6,4 @@ if (place_meeting(x,y,obj_wall) || place_meeting(x,y,obj_ceiling)) {
 			obj_player.vsp = 0;
 			obj_player.grv = 0; 
 			}
-		if (obj_player.hooking == false){ 
-			obj_player.speed = 0;
-			obj_player.grv = 1;
-			instance_destroy(); 
-			}
 }

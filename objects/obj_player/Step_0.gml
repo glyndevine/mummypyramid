@@ -21,9 +21,14 @@ var prev_vsp = vsp;
 hsp = move * walksp;
 vsp = vsp + grv;
 
+
 // Hook Movement
-if (hooking == true && hookflying == false) {
-    move_towards_point(obj_hookshot.x, obj_hookshot.y, 6);
+if (hooking == true && hookflying == false ) {
+    grv = 0;
+	hsp = (obj_hookshot.x - obj_player.x) / 10;
+	vsp = (obj_hookshot.y - obj_player.y) / 10;
+} else {
+	grv = 1;
 }
 
 
